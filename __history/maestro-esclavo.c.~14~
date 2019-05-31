@@ -37,8 +37,8 @@ void main(void)
    {
       if(print == 1)
       {
-         printf("La hora es: \n\n");
-         printf("%u horas, %u minutos, %u segundos",hrs,min,sec);
+         printf("\nLa hora es:\n");
+         printf("Hora %u, Minuto %u, Segundos %u",hrs,min,sec);
          print = 0;
       }
    }

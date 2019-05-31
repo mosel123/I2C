@@ -1,9 +1,9 @@
 
-ROM used:   674/65536 (1%)
-            674/65536 (1%) including unused fragments
+ROM used:   738/65536 (1%)
+            738/65536 (1%) including unused fragments
 
-            0.2 Average locations per line
-            1.3 Average locations per statement
+            0.3 Average locations per line
+            1.5 Average locations per statement
 
 RAM used:   14/3968 (0%) at main() level
             22/3968 (1%) worst case
@@ -13,44 +13,46 @@ Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   70    23   5  maestro-esclavo.c
+   71    24   5  maestro-esclavo.c
   834     0   0  ..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h
  1351   359  71  ..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h
    32     0   0  ..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h
   423   125  25  ..\..\..\..\Program Files (x86)\PICC\Drivers\string.h
    28     0   0  ..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h
 ----- -----
- 2738   507 Total
+ 2739   508 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
 0     72   5    3             @I2C_READ_1
 0     72   5    1             @I2C_WRITE_1
-0    274  20    0   237  3.9  MAIN
-0     32   2    0             @const933
-0     32   2    3             @PSTRINGCN_9600_31766_31767
-0     40   3    3             @DIV88
-0    108   8    2             @PRINTF_U_9600_31766_31767
+0    284  19    0   262  4.0  MAIN
+0     16   1    0             @const933
+0     36   2    2             @PSTRINGC_9600_31766_31767
+0     34   2    0   166  4.7  @const935
+0     40   3    3   365  3.1  @DIV88
+0    108   7    2   365  3.1  @PRINTF_U_9600_31766_31767
+0     32   2    3   365  3.1  @PSTRINGCN_9600_31766_31767
 0     40   3    3   166  4.7  converBCD
  Inline         5   365  3.1  rtc_get_time
- Inline         0             @cinit1
+ Inline         0   365  3.1  @cinit1
 
 Program metrics:
-    Functions               3
-    Statements              507
+    Functions               8
+    Statements              508
     Comments                934
-    Volume (V)              1018
-    Difficulty (D)          10.9
-    Effort to implement (E) 11119
-    Time to implement (T)   10 minutes
-    Est Delivered Bugs (B)  0
+    Volume (V)              3824
+    Difficulty (D)          29.0
+    Effort to implement (E) 110748
+    Time to implement (T)   1 hours, 43 minutes
+    Est Delivered Bugs (B)  1
     Cyclomatic Complexity   1
-    Maintainability (MI)    98
+    Maintainability (MI)    29
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
-00004-0FFFE   670  64862  
+00004-0FFFE   734  64798  
 
 
 
