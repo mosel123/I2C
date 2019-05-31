@@ -1,11 +1,11 @@
-CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
+CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:43
 
                Filename:   C:\Users\Usuario\Desktop\I2C\maestro-esclavo.lst
 
-               ROM used:   670 bytes (1%)
-                           Largest free fragment is 64866
+               ROM used:   674 bytes (1%)
+                           Largest free fragment is 64862
                RAM used:   14 (0%) at main() level
-                           21 (1%) worst case
+                           22 (1%) worst case
                Stack used: 2 locations
                Stack size: 31
 
@@ -2035,7 +2035,7 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 0002A:  BCF    F8B.3
 0002C:  BCF    F94.3
 0002E:  NOP   
-00030:  RLCF   11,F
+00030:  RLCF   12,F
 00032:  BCF    F8B.4
 00034:  BTFSC  FD8.0
 00036:  BSF    F94.4
@@ -2066,8 +2066,8 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 00068:  BCF    F94.4
 0006A:  RETURN 0
 0006C:  MOVLW  08
-0006E:  MOVWF  12
-00070:  MOVFF  00,13
+0006E:  MOVWF  13
+00070:  MOVFF  00,14
 00074:  BSF    F94.4
 00076:  NOP   
 00078:  BSF    F94.3
@@ -2081,12 +2081,12 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 00088:  NOP   
 0008A:  BCF    F94.3
 0008C:  BCF    F8B.3
-0008E:  DECFSZ 12,F
+0008E:  DECFSZ 13,F
 00090:  BRA    0074
 00092:  BSF    F94.4
 00094:  NOP   
 00096:  BCF    F8B.4
-00098:  MOVF   13,W
+00098:  MOVF   14,W
 0009A:  BTFSS  FD8.2
 0009C:  BCF    F94.4
 0009E:  NOP   
@@ -2121,7 +2121,7 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 .................... #endif 
 ....................  
 .................... int converBCD(BYTE bcd); 
-.................... void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec); 
+.................... void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec, int &print); 
 ....................  
 .................... void main(void) 
 *
@@ -2155,87 +2155,87 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 ....................    set_tris_c(0x19); 
 001C2:  MOVLW  19
 001C4:  MOVWF  F94
-....................    rtc_get_time(hrs, min, sec); 
+....................    rtc_get_time(hrs, min, sec, print); 
 ....................    while(TRUE) 
 ....................    { 
 ....................       if(print == 1) 
 *
-0024C:  DECFSZ 0D,W
-0024E:  BRA    029A
+00250:  DECFSZ 0D,W
+00252:  BRA    029E
 ....................       { 
 ....................          printf("Hora %u, Minuto %u, Segundos %u",hrs,min,sec); 
-00250:  MOVLW  04
-00252:  MOVWF  FF6
-00254:  MOVLW  00
-00256:  MOVWF  FF7
-00258:  MOVLW  05
-0025A:  MOVWF  0E
-0025C:  RCALL  00DC
-0025E:  MOVFF  0A,0E
-00262:  MOVLW  1B
-00264:  MOVWF  0F
-00266:  RCALL  0124
-00268:  MOVLW  0B
-0026A:  MOVWF  FF6
-0026C:  MOVLW  00
-0026E:  MOVWF  FF7
-00270:  MOVLW  09
-00272:  MOVWF  0E
-00274:  RCALL  00DC
-00276:  MOVFF  0B,0E
-0027A:  MOVLW  1B
-0027C:  MOVWF  0F
-0027E:  RCALL  0124
-00280:  MOVLW  16
-00282:  MOVWF  FF6
-00284:  MOVLW  00
-00286:  MOVWF  FF7
-00288:  MOVLW  0B
-0028A:  MOVWF  0E
-0028C:  RCALL  00DC
-0028E:  MOVFF  0C,0E
-00292:  MOVLW  1B
-00294:  MOVWF  0F
-00296:  RCALL  0124
+00254:  MOVLW  04
+00256:  MOVWF  FF6
+00258:  MOVLW  00
+0025A:  MOVWF  FF7
+0025C:  MOVLW  05
+0025E:  MOVWF  0E
+00260:  RCALL  00DC
+00262:  MOVFF  0A,0E
+00266:  MOVLW  1B
+00268:  MOVWF  0F
+0026A:  RCALL  0124
+0026C:  MOVLW  0B
+0026E:  MOVWF  FF6
+00270:  MOVLW  00
+00272:  MOVWF  FF7
+00274:  MOVLW  09
+00276:  MOVWF  0E
+00278:  RCALL  00DC
+0027A:  MOVFF  0B,0E
+0027E:  MOVLW  1B
+00280:  MOVWF  0F
+00282:  RCALL  0124
+00284:  MOVLW  16
+00286:  MOVWF  FF6
+00288:  MOVLW  00
+0028A:  MOVWF  FF7
+0028C:  MOVLW  0B
+0028E:  MOVWF  0E
+00290:  RCALL  00DC
+00292:  MOVFF  0C,0E
+00296:  MOVLW  1B
+00298:  MOVWF  0F
+0029A:  RCALL  0124
 ....................          print = 0; 
-00298:  CLRF   0D
+0029C:  CLRF   0D
 ....................       } 
-0029A:  BRA    024C
+0029E:  BRA    0250
 ....................    } 
 .................... } 
 ....................  
-0029C:  SLEEP 
+002A0:  SLEEP 
 .................... int converBCD(BYTE bcd) 
 *
-000B4:  CLRF   13
+000B4:  CLRF   14
 .................... { 
 ....................    int cambia = 0; 
 ....................    cambia = bcd; 
-000B6:  MOVFF  12,13
+000B6:  MOVFF  13,14
 ....................    cambia >>= 1; 
 000BA:  BCF    FD8.0
-000BC:  RRCF   13,F
+000BC:  RRCF   14,F
 ....................    cambia &= 0x78; 
 000BE:  MOVLW  78
-000C0:  ANDWF  13,F
+000C0:  ANDWF  14,F
 ....................     
 ....................    return(cambia + (cambia>>2) + (bcd & 0x0f)); 
-000C2:  RRCF   13,W
+000C2:  RRCF   14,W
 000C4:  MOVWF  00
 000C6:  RRCF   00,F
 000C8:  MOVLW  3F
 000CA:  ANDWF  00,F
 000CC:  MOVF   00,W
-000CE:  ADDWF  13,W
-000D0:  MOVWF  14
-000D2:  MOVF   12,W
+000CE:  ADDWF  14,W
+000D0:  MOVWF  15
+000D2:  MOVF   13,W
 000D4:  ANDLW  0F
-000D6:  ADDWF  14,W
+000D6:  ADDWF  15,W
 000D8:  MOVWF  01
 000DA:  RETURN 0
 .................... } 
 ....................  
-.................... void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec)  
+.................... void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec, int &print)  
 .................... { 
 ....................    i2c_start();   //Escritura 
 *
@@ -2250,10 +2250,10 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 001D6:  BCF    F94.3
 ....................    i2c_write(0xD0);  //Codigo de escritura 
 001D8:  MOVLW  D0
-001DA:  MOVWF  11
+001DA:  MOVWF  12
 001DC:  RCALL  0024
 ....................    i2c_write(0x00);  //Puntero de la primera dirección 
-001DE:  CLRF   11
+001DE:  CLRF   12
 001E0:  RCALL  0024
 ....................    i2c_start();   //Lectura 
 001E2:  BSF    F94.4
@@ -2269,7 +2269,7 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 001F6:  BCF    F94.3
 ....................    i2c_write(0xD1);  //Codigo de lectura 
 001F8:  MOVLW  D1
-001FA:  MOVWF  11
+001FA:  MOVWF  12
 001FC:  RCALL  0024
 ....................    sec = converBCD(i2c_read()&0x7f); //Lectura de los 7 bit de los segundos 
 001FE:  MOVLW  01
@@ -2278,7 +2278,7 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 00204:  MOVF   01,W
 00206:  ANDLW  7F
 00208:  MOVWF  0E
-0020A:  MOVWF  12
+0020A:  MOVWF  13
 0020C:  RCALL  00B4
 0020E:  MOVFF  01,0C
 ....................    min = converBCD(i2c_read()&0x7f); //Lectura de los 7 bit de los minutos 
@@ -2288,7 +2288,7 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 00218:  MOVF   01,W
 0021A:  ANDLW  7F
 0021C:  MOVWF  0E
-0021E:  MOVWF  12
+0021E:  MOVWF  13
 00220:  RCALL  00B4
 00222:  MOVFF  01,0B
 ....................    hrs = converBCD(i2c_read(0)&0x3f); //Lectura de los 6 bit de las horas 
@@ -2297,7 +2297,7 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 0022A:  MOVF   01,W
 0022C:  ANDLW  3F
 0022E:  MOVWF  0E
-00230:  MOVWF  12
+00230:  MOVWF  13
 00232:  RCALL  00B4
 00234:  MOVFF  01,0A
 ....................    i2c_stop(); //Finaliza comunicación 
@@ -2311,6 +2311,9 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 00246:  NOP   
 00248:  BSF    F94.4
 0024A:  NOP   
+....................    print = 1; 
+0024C:  MOVLW  01
+0024E:  MOVWF  0D
 .................... } 
 ....................  
 

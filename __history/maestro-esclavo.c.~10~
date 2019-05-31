@@ -26,13 +26,13 @@ int print = 0;
 #endif
 
 int converBCD(BYTE bcd);
-void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec, int &print);
+void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec);
 
 void main(void)
 {
    enable_interrupts(GLOBAL | INT_SSP);
    set_tris_c(0x19);
-   rtc_get_time(hrs, min, sec, print);
+   rtc_get_time(hrs, min, sec);
    while(TRUE)
    {
       if(print == 1)

@@ -1,7 +1,7 @@
 ÀÄmaestro-esclavo
-   ÀÄMAIN  0/270  Ram=0
+   ÀÄMAIN  0/274  Ram=0
       ÃÄ@cinit1  (Inline)  Ram=0
-      ÃÄrtc_get_time  (Inline)  Ram=4
+      ÃÄrtc_get_time  (Inline)  Ram=5
       ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
       ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
       ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
