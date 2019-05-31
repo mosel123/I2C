@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:52
+CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 11:29
 
                Filename:   C:\Users\Usuario\Desktop\I2C\maestro-esclavo.lst
 
@@ -2126,7 +2126,7 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:52
 .................... #define RTC_DS1307_WRITTE_ADD 0xD0 
 .................... #define RTC_DS1307_READ_ADD 0xD1 
 .................... #define INIT_READ_DATA 0x00 
-.................... #define ACK_ACUSE 0x00 
+.................... #define ACK_ACUSE 0 
 ....................  
 .................... //int BufferDatos[9]; 
 .................... //int cont_Buff = 0; 
@@ -2276,11 +2276,11 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:52
 00208:  NOP   
 0020A:  BCF    F8B.3
 0020C:  BCF    F94.3
-....................    i2c_write(0xD0);  //Codigo de escritura 
+....................    i2c_write(RTC_DS1307_WRITTE_ADD);  //Codigo de escritura 
 0020E:  MOVLW  D0
 00210:  MOVWF  12
 00212:  RCALL  0036
-....................    i2c_write(0x00);  //Puntero de la primera dirección 
+....................    i2c_write(INIT_READ_DATA);  //Puntero de la primera dirección 
 00214:  CLRF   12
 00216:  RCALL  0036
 ....................    i2c_start();   //Lectura 
@@ -2295,7 +2295,7 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:52
 00228:  NOP   
 0022A:  BCF    F8B.3
 0022C:  BCF    F94.3
-....................    i2c_write(0xD1);  //Codigo de lectura 
+....................    i2c_write(RTC_DS1307_READ_ADD);  //Codigo de lectura 
 0022E:  MOVLW  D1
 00230:  MOVWF  12
 00232:  RCALL  0036
@@ -2319,7 +2319,7 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:52
 00254:  MOVWF  13
 00256:  RCALL  00C6
 00258:  MOVFF  01,0B
-....................    hrs = converBCD(i2c_read(0)&0x3f); //Lectura de los 6 bit de las horas 
+....................    hrs = converBCD(i2c_read(ACK_ACUSE)&0x3f); //Lectura de los 6 bit de las horas 
 0025C:  CLRF   00
 0025E:  RCALL  007E
 00260:  MOVF   01,W

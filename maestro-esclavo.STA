@@ -29,25 +29,25 @@ Page ROM  %  RAM   Vol Diff  Functions:
 0    284  19    0   262  4.0  MAIN
 0     16   1    0             @const933
 0     36   2    2             @PSTRINGC_9600_31766_31767
-0     34   2    0   166  4.7  @const935
-0     40   3    3   365  3.1  @DIV88
-0    108   7    2   365  3.1  @PRINTF_U_9600_31766_31767
-0     32   2    3   365  3.1  @PSTRINGCN_9600_31766_31767
+0     34   2    0             @const935
+0     40   3    3             @DIV88
+0    108   7    2             @PRINTF_U_9600_31766_31767
+0     32   2    3             @PSTRINGCN_9600_31766_31767
 0     40   3    3   166  4.7  converBCD
  Inline         5   365  3.1  rtc_get_time
- Inline         0   365  3.1  @cinit1
+ Inline         0             @cinit1
 
 Program metrics:
-    Functions               8
+    Functions               3
     Statements              508
     Comments                934
-    Volume (V)              3824
-    Difficulty (D)          29.0
-    Effort to implement (E) 110748
-    Time to implement (T)   1 hours, 43 minutes
-    Est Delivered Bugs (B)  1
+    Volume (V)              1054
+    Difficulty (D)          10.7
+    Effort to implement (E) 11268
+    Time to implement (T)   10 minutes
+    Est Delivered Bugs (B)  0
     Cyclomatic Complexity   1
-    Maintainability (MI)    29
+    Maintainability (MI)    98
 
  Segment     Used  Free
 -----------  ----  ----
