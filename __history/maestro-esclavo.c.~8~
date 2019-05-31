@@ -62,7 +62,7 @@ void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec)
    i2c_write(0xD1);  //Codigo de lectura
    sec = converBCD(i2c_read()&0x7f); //Lectura de los 7 bit de los segundos
    min = converBCD(i2c_read()&0x7f); //Lectura de los 7 bit de los minutos
-   hrs = converBCD(i2c_read(0)&0x3f); //Lectura de los 6 bit de las horas
+   hr = converBCD(i2c_read(0)&0x3f); //Lectura de los 6 bit de las horas
    i2c_stop(); //Finaliza comunicación
 }
 

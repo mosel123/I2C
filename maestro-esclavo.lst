@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:34
+CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:37
 
                Filename:   C:\Users\Usuario\Desktop\I2C\maestro-esclavo.lst
 
@@ -2291,7 +2291,7 @@ CCS PCH C Compiler, Version 5.012, 41559               31-may.-19 10:34
 0021E:  MOVWF  12
 00220:  RCALL  00B4
 00222:  MOVFF  01,0B
-....................    hr = converBCD(i2c_read(0)&0x3f); //Lectura de los 6 bit de las horas 
+....................    hrs = converBCD(i2c_read(0)&0x3f); //Lectura de los 6 bit de las horas 
 00226:  CLRF   00
 00228:  RCALL  006C
 0022A:  MOVF   01,W
