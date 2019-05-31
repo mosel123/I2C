@@ -1,0 +1,23 @@
+ÀÄmaestro-esclavo
+   ÀÄMAIN  0/270  Ram=0
+      ÃÄ@cinit1  (Inline)  Ram=0
+      ÃÄrtc_get_time  (Inline)  Ram=4
+      ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+      ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+      ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+      ³  ÃÄconverBCD  0/40  Ram=3
+      ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+      ³  ÃÄconverBCD  0/40  Ram=3
+      ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+      ³  ÀÄconverBCD  0/40  Ram=3
+      ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
+      ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
+      ³  ÃÄ@DIV88  0/40  Ram=3
+      ³  ÀÄ@DIV88  0/40  Ram=3
+      ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
+      ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
+      ³  ÀÄ*
+      ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
+      ÀÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
+         ÀÄ*
