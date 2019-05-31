@@ -59,8 +59,8 @@ void main(void)
          printf("\n\r");
          printf("La hora es: ");
          printf("%u horas, %u minutos, %u segundos",hrs,min,sec);
-/*         printf("\n\r")
-         printf("Deseas cambiar la fecha [S] Si, [N] No: ");
+         printf("\n\r")
+/*         printf("Deseas cambiar la fecha [S] Si, [N] No: ");
          
          if(caracter == 'S' || caracter == 's')
          {

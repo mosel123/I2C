@@ -15,10 +15,8 @@
 //int BufferDatos[9];
 //int cont_Buff = 0;
 int hrs = 0, min = 0, sec = 0;
-int year = 0, month = 0, day = 0, date = 0;
-int banderaDate = 0;
-char bandera, caracter;
-int banderaSerial = 0;
+int year = 0, month = 0, day = 0;
+int print = 0;
 
 #define __DEBUG_SERIAL__
 
@@ -29,43 +27,30 @@ int banderaSerial = 0;
    #use fast_io(c)
 #endif
 
-#bit banderaSerial = bandera.0
-#INT_RDA
-
-void itrRDA(void)
-{
-   caracter = getc();
-   banderaSerial = 1;
-}
-
 int converBCD(BYTE bcd);
-void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec, int &banderaDate);
-void rtc_get_date(BYTE& year, BYTE& month, BYTE& day, BYTE& date, int &banderaDate);
+void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec, int &print);
+void rtc_get_date(BYTE& year, BYTE& month, BYTE& day, int &print);
 
 void main(void)
 {
    enable_interrupts(GLOBAL | INT_SSP);
    set_tris_c(0x19);
-   rtc_get_time(hrs, min, sec, banderaDate);
-   rtc_get_date(year, month, day, date, banderaDate);
+   rtc_get_time(hrs, min, sec, print);
+   rtc_get_date(year, month, day, print);
    
    while(TRUE)
    {
-      if(banderaDate == 1)
+      if(print == 1)
       {
-         banderaDate = 0;
          printf("La fecha es: ");
-         printf("%u / %u / %u",day,month,year);
-         printf("\n\r");
+         printf("%u /, %u /, %u \n\r",day,month,year);
+         print = 1;
+      }
+      if(print == 1)
+      {
          printf("La hora es: ");
          printf("%u horas, %u minutos, %u segundos",hrs,min,sec);
-/*         printf("\n\r")
-         printf("Deseas cambiar la fecha [S] Si, [N] No: ");
-         
-         if(caracter == 'S' || caracter == 's')
-         {
-            
-         }*/
+         print = 0;
       }
    }
 }
@@ -80,7 +65,7 @@ int converBCD(BYTE bcd)
    return(cambia + (cambia>>2) + (bcd & 0x0f));
 }
 
-void rtc_get_time(BYTE& hrs, BYTE& min, BYTE& sec, int &banderaDate) 
+void rtc_get_time(BYTE& hrs, BYTE& min, BYTE& sec, int &print) 
 {
    i2c_start();   //Escritura
    i2c_write(RTC_DS1307_WRITTE_ADD);  //Codigo de escritura
@@ -91,10 +76,10 @@ void rtc_get_time(BYTE& hrs, BYTE& min, BYTE& sec, int &banderaDate)
    min = converBCD(i2c_read()&0x7f); //Lectura de los 7 bit de los minutos
    hrs = converBCD(i2c_read(ACK_ACUSE)&0x3f); //Lectura de los 7 bit de las horas
    i2c_stop(); //Finaliza comunicación
-   banderaDate = 1;
+   print = 2;
 }
 
-void rtc_get_date(BYTE& year, BYTE& month, BYTE& date, BYTE& day, int &banderaDate) 
+void rtc_get_date(BYTE& year, BYTE& month, BYTE& day, int &print) 
 {
    i2c_start();
    i2c_write(RTC_DS1307_WRITTE_ADD);
@@ -102,9 +87,8 @@ void rtc_get_date(BYTE& year, BYTE& month, BYTE& date, BYTE& day, int &banderaDa
    i2c_start();
    i2c_write(RTC_DS1307_READ_ADD);
    day = converBCD(i2c_read()&0x2f);
-   date = converBCD(i2c_read()&0x3f);
    month = converBCD(i2c_read()&0x3f);
    year = converBCD(i2c_read(ACK_ACUSE)&0x7f);
    i2c_stop();
-   banderaDate = 1;
+   print = 1;
 }

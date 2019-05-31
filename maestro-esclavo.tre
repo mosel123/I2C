@@ -1,44 +1,46 @@
 ÀÄmaestro-esclavo
-   ÀÄMAIN  0/520  Ram=0
-      ÃÄ@cinit1  (Inline)  Ram=0
-      ÃÄrtc_get_time  (Inline)  Ram=5
-      ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
-      ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
-      ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
-      ³  ÃÄ@I2C_READ_1  0/72  Ram=3
-      ³  ÃÄconverBCD  0/40  Ram=3
-      ³  ÃÄ@I2C_READ_1  0/72  Ram=3
-      ³  ÃÄconverBCD  0/40  Ram=3
-      ³  ÃÄ@I2C_READ_1  0/72  Ram=3
-      ³  ÀÄconverBCD  0/40  Ram=3
-      ÃÄrtc_get_date  (Inline)  Ram=5
-      ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
-      ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
-      ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
-      ³  ÃÄ@I2C_READ_1  0/72  Ram=3
-      ³  ÃÄconverBCD  0/40  Ram=3
-      ³  ÃÄ@I2C_READ_1  0/72  Ram=3
-      ³  ÃÄconverBCD  0/40  Ram=3
-      ³  ÃÄ@I2C_READ_1  0/72  Ram=3
-      ³  ÀÄconverBCD  0/40  Ram=3
-      ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
-      ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
-      ³  ÃÄ@DIV88  0/40  Ram=3
-      ³  ÀÄ@DIV88  0/40  Ram=3
-      ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
-      ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
-      ³  ÀÄ*
-      ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
-      ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
-      ³  ÀÄ*
-      ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
-      ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
-      ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
-      ³  ÀÄ*
-      ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
-      ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
-      ³  ÀÄ*
-      ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
-      ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
-      ³  ÀÄ*
-      ÀÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
+   ÃÄMAIN  0/540  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄrtc_get_time  (Inline)  Ram=5
+   ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄconverBCD  0/40  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄconverBCD  0/40  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÀÄconverBCD  0/40  Ram=3
+   ³  ÃÄrtc_get_date  (Inline)  Ram=6
+   ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄconverBCD  0/40  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄconverBCD  0/40  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄconverBCD  0/40  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÀÄconverBCD  0/40  Ram=3
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
+   ³  ³  ÃÄ@DIV88  0/40  Ram=3
+   ³  ³  ÀÄ@DIV88  0/40  Ram=3
+   ³  ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
+   ³  ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
+   ³  ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
+   ³  ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
+   ³  ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÀÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
+   ÀÄitrRDA  0/18  Ram=0
