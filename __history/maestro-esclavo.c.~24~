@@ -14,7 +14,6 @@
 //int BufferDatos[9];
 //int cont_Buff = 0;
 int hrs = 0, min = 0, sec = 0;
-int year = 0, month = 0, day = 0;
 int print = 0;
 
 #define __DEBUG_SERIAL__
@@ -28,26 +27,17 @@ int print = 0;
 
 int converBCD(BYTE bcd);
 void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec, int &print);
-void rtc_get_date(BYTE& year, BYTE& month, BYTE& day, int &print);
 
 void main(void)
 {
    enable_interrupts(GLOBAL | INT_SSP);
    set_tris_c(0x19);
    rtc_get_time(hrs, min, sec, print);
-   rtc_get_date(year, month, day, print);
-   
    while(TRUE)
    {
-      if(print == 2)
-      {
-         printf("La hora es: ");
-         printf("%u horas, %u minutos, %u segundos",hrs,min,sec);
-         print = 1;
-      }
       if(print == 1)
       {
-         printf("\nLa fecha es: ");
+         printf("La hora es: \n\n");
          printf("%u horas, %u minutos, %u segundos",hrs,min,sec);
          print = 0;
       }
@@ -64,7 +54,7 @@ int converBCD(BYTE bcd)
    return(cambia + (cambia>>2) + (bcd & 0x0f));
 }
 
-void rtc_get_time(BYTE& hrs, BYTE& min, BYTE& sec, int &print) 
+void rtc_get_time(BYTE& hr, BYTE& min, BYTE& sec, int &print) 
 {
    i2c_start();   //Escritura
    i2c_write(RTC_DS1307_WRITTE_ADD);  //Codigo de escritura
@@ -75,19 +65,6 @@ void rtc_get_time(BYTE& hrs, BYTE& min, BYTE& sec, int &print)
    min = converBCD(i2c_read()&0x7f); //Lectura de los 7 bit de los minutos
    hrs = converBCD(i2c_read(ACK_ACUSE)&0x3f); //Lectura de los 6 bit de las horas
    i2c_stop(); //Finaliza comunicación
-   print = 2;
-}
-
-void rtc_get_date(BYTE& year, BYTE& month, BYTE& day, int &print) 
-{
-   i2c_start();   //Escritura
-   i2c_write(RTC_DS1307_WRITTE_ADD);  //Codigo de escritura
-   i2c_write(INIT_READ_DATA);  //Puntero de la primera dirección
-   i2c_start();   //Lectura
-   i2c_write(RTC_DS1307_READ_ADD);  //Codigo de lectura
-   day = converBCD(i2c_read()&0x7f); //Lectura de los 7 bit de los segundos
-   month = converBCD(i2c_read()&0x7f); //Lectura de los 7 bit de los minutos
-   year = converBCD(i2c_read(ACK_ACUSE)&0x3f); //Lectura de los 6 bit de las horas
-   i2c_stop(); //Finaliza comunicación
    print = 1;
 }
+

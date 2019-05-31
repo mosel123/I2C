@@ -1,58 +1,61 @@
 
-ROM used:   738/65536 (1%)
-            738/65536 (1%) including unused fragments
+ROM used:   1020/65536 (2%)
+            1020/65536 (2%) including unused fragments
 
-            0.3 Average locations per line
-            1.5 Average locations per statement
+            0.4 Average locations per line
+            1.9 Average locations per statement
 
-RAM used:   14/3968 (0%) at main() level
-            22/3968 (1%) worst case
+RAM used:   17/3968 (0%) at main() level
+            25/3968 (1%) worst case
 
 Stack used: 2 worst case (2 in main + 0 for interrupts)
 Stack size: 31
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-   71    24   5  maestro-esclavo.c
+   94    40   8  maestro-esclavo.c
   834     0   0  ..\..\..\..\Program Files (x86)\PICC\Devices\18F4620.h
- 1351   359  71  ..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h
+ 1351   359  69  ..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h
    32     0   0  ..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h
-  423   125  25  ..\..\..\..\Program Files (x86)\PICC\Drivers\string.h
+  423   125  24  ..\..\..\..\Program Files (x86)\PICC\Drivers\string.h
    28     0   0  ..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h
 ----- -----
- 2739   508 Total
+ 2762   524 Total
 
 Page ROM  %  RAM   Vol Diff  Functions:
 ---- --- --- ---   --- ----  ----------
-0     72   5    3             @I2C_READ_1
-0     72   5    1             @I2C_WRITE_1
-0    284  19    0   262  4.0  MAIN
-0     16   1    0             @const933
-0     36   2    2             @PSTRINGC_9600_31766_31767
-0     34   2    0             @const935
-0     40   3    3             @DIV88
-0    108   7    2             @PRINTF_U_9600_31766_31767
+0     72   4    3             @I2C_READ_1
+0     72   4    1             @I2C_WRITE_1
+0    520  25    0   482  4.2  MAIN
+0     14   1    0             @const941
+0     34   2    2             @PSTRINGC_9600_31766_31767
+0     34   2    0             @const943
+0     40   2    3             @DIV88
+0    108   5    2             @PRINTF_U_9600_31766_31767
 0     32   2    3             @PSTRINGCN_9600_31766_31767
-0     40   3    3   166  4.7  converBCD
+0     16   1    0   365  3.1  @const952
+0     34   2    0   365  3.1  @const953
+0     40   2    3   166  4.7  converBCD
  Inline         5   365  3.1  rtc_get_time
+ Inline         5   365  3.1  rtc_get_date
  Inline         0             @cinit1
 
 Program metrics:
-    Functions               3
-    Statements              508
-    Comments                934
-    Volume (V)              1054
-    Difficulty (D)          10.7
-    Effort to implement (E) 11268
-    Time to implement (T)   10 minutes
-    Est Delivered Bugs (B)  0
-    Cyclomatic Complexity   1
-    Maintainability (MI)    98
+    Functions               6
+    Statements              524
+    Comments                943
+    Volume (V)              3151
+    Difficulty (D)          20.5
+    Effort to implement (E) 64563
+    Time to implement (T)   1 hours, 0 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   2
+    Maintainability (MI)    93
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
-00004-0FFFE   734  64798  
+00004-0FFFE  1016  64516  
 
 
 
