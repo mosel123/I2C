@@ -17,7 +17,7 @@
 int hrs = 0, min = 0, sec = 0;
 int year = 0, month = 0, day = 0, date = 0;
 int banderaDate = 0;
-char caracter;
+char bandera, caracter;
 int addTime=0;
 
 #define __DEBUG_SERIAL__
@@ -34,7 +34,6 @@ void timer0(void)
 {
    set_timer0(15536);
    addTime++;
-   caracter = getc();
 }
 
 int converBCD(BYTE bcd);
@@ -53,9 +52,9 @@ void main(void)
    
    while(TRUE)
    {
-      if(banderaDate == 1)
+      if(addTime >= 10)
       {
-         banderaDate = 0;
+         addTime = 0;
          printf("La fecha es: ");
          printf("%u / %u / %u",day,month,year);
          printf("\n\r");
@@ -95,7 +94,6 @@ void rtc_get_time(BYTE& hrs, BYTE& min, BYTE& sec, int &banderaDate)
    min = converBCD(i2c_read()&0x7f); //Lectura de los 7 bit de los minutos
    hrs = converBCD(i2c_read(ACK_ACUSE)&0x3f); //Lectura de los 7 bit de las horas
    i2c_stop(); //Finaliza comunicación
-   banderaDate = 1;
 }
 
 void rtc_get_date(BYTE& year, BYTE& month, BYTE& date, BYTE& day, int &banderaDate) 
@@ -110,5 +108,4 @@ void rtc_get_date(BYTE& year, BYTE& month, BYTE& date, BYTE& day, int &banderaDa
    month = converBCD(i2c_read()&0x3f);
    year = converBCD(i2c_read(ACK_ACUSE)&0x7f);
    i2c_stop();
-   banderaDate = 1;
 }

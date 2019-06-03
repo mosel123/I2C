@@ -1,5 +1,5 @@
 ÀÄmaestro-esclavo
-   ÃÄMAIN  0/540  Ram=0
+   ÃÄMAIN  0/618  Ram=0
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄrtc_get_time  (Inline)  Ram=5
    ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
@@ -42,5 +42,7 @@
    ³  ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
    ³  ÃÄ@PRINTF_U_9600_31766_31767  0/108  Ram=2
    ³  ³  ÀÄ*
-   ³  ÀÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
-   ÀÄitrRDA  0/18  Ram=0
+   ³  ÃÄ@PSTRINGCN_9600_31766_31767  0/32  Ram=3
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÀÄ@PSTRINGR_9600_31766_31767  0/40  Ram=2
+   ÀÄtimer0  0/24  Ram=0

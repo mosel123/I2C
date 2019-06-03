@@ -53,9 +53,9 @@ void main(void)
    
    while(TRUE)
    {
-      if(banderaDate == 1)
+      if(addTime >= 10)
       {
-         banderaDate = 0;
+         addTime = 0;
          printf("La fecha es: ");
          printf("%u / %u / %u",day,month,year);
          printf("\n\r");

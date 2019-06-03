@@ -1,7 +1,7 @@
-D G "__PCH__" 0 112 ""5.012""
-D G "__DEVICE__" 0 112 "4620"
-D G "__DATE__" 0 112 ""31-may.-19""
-D G "__TIME__" 0 112 ""12:35:37"" "Standard Header file for the PIC18F4620 device ////////////////"
+D G "__PCH__" 0 116 ""5.012""
+D G "__DEVICE__" 0 116 "4620"
+D G "__DATE__" 0 116 ""31-may.-19""
+D G "__TIME__" 0 116 ""13:14:01"" "Standard Header file for the PIC18F4620 device ////////////////"
 c L "set_tris_a" 1 3 6 "FUNCTION"
 v L "value" 1 43 "int8" `54 
 f B "set_tris_a" 1 43 "void(int8 value)" `53 
@@ -1326,36 +1326,35 @@ V G "month" 0 18 "int8" `919
 V G "day" 0 18 "int8" `920 
 V G "date" 0 18 "int8" `921 
 V G "banderaDate" 0 19 "int8" `922 
-V G "bandera" 0 20 "int8" `923 
-V G "caracter" 0 20 "int8" `924 
-V G "banderaSerial" 0 21 "int8" `925 
+V G "caracter" 0 20 "int8" `923 
+V G "addTime" 0 21 "int8" `924 
 D G "__DEBUG_SERIAL__" 0 23 ""
 D G "TX_232" 0 26 "PIN_C6"
 D G "RX_232" 0 27 "PIN_C7"
-F G "itrRDA" 0 36 "void()" `930 
-V L "bcd" 0 41 "int8" `932 
-f G "converBCD" 0 41 "int8(int8 bcd)" `931 
-V L "hr" 0 42 "int8" `934 
-V L "min" 0 42 "int8" `935 
-V L "sec" 0 42 "int8" `936 
-V L "banderaDate" 0 42 "int8" `937 
-f G "rtc_get_time" 0 42 "void(int8 hr,int8 min,int8 sec,int8 banderaDate)" `933 
-V L "year" 0 43 "int8" `939 
-V L "month" 0 43 "int8" `940 
-V L "day" 0 43 "int8" `941 
-V L "date" 0 43 "int8" `942 
-V L "banderaDate" 0 43 "int8" `943 
-f G "rtc_get_date" 0 43 "void(int8 year,int8 month,int8 day,int8 date,int8 banderaDate)" `938 
-F G "MAIN" 0 46 "void()" `944 
-C L "MAIN" 0 15 4 "FUNCTION"
-V L "bcd" 0 73 "int8" `962 
-F G "converBCD" 0 74 "int8(int8 bcd)" `931 
-V L "cambia" 0 75 "int8" `961 
-V L "hrs" 0 83 "int8" `934 
-V L "min" 0 83 "int8" `935 
-V L "sec" 0 83 "int8" `936 
-V L "banderaDate" 0 83 "int8" `966 
-F G "rtc_get_time" 0 84 "void(int8 hrs,int8 min,int8 sec,int8 banderaDate)" `933 
+F G "timer0" 0 34 "void()" `929 
+V L "bcd" 0 40 "int8" `931 
+f G "converBCD" 0 40 "int8(int8 bcd)" `930 
+V L "hr" 0 41 "int8" `933 
+V L "min" 0 41 "int8" `934 
+V L "sec" 0 41 "int8" `935 
+V L "banderaDate" 0 41 "int8" `936 
+f G "rtc_get_time" 0 41 "void(int8 hr,int8 min,int8 sec,int8 banderaDate)" `932 
+V L "year" 0 42 "int8" `938 
+V L "month" 0 42 "int8" `939 
+V L "day" 0 42 "int8" `940 
+V L "date" 0 42 "int8" `941 
+V L "banderaDate" 0 42 "int8" `942 
+f G "rtc_get_date" 0 42 "void(int8 year,int8 month,int8 day,int8 date,int8 banderaDate)" `937 
+F G "MAIN" 0 45 "void()" `943 
+V L "i" 0 69 "int8" `962 
+V L "bcd" 0 77 "int8" `966 
+F G "converBCD" 0 78 "int8(int8 bcd)" `930 
+V L "cambia" 0 79 "int8" `965 
+V L "hrs" 0 87 "int8" `933 
+V L "min" 0 87 "int8" `934 
+V L "sec" 0 87 "int8" `935 
+V L "banderaDate" 0 87 "int8" `970 
+F G "rtc_get_time" 0 88 "void(int8 hrs,int8 min,int8 sec,int8 banderaDate)" `932 
 C L "rtc_get_time" 0 15 1 "FUNCTION"
 C L "rtc_get_time" 0 15 1 "FUNCTION"
 C L "rtc_get_time" 0 15 1 "FUNCTION"
@@ -1365,12 +1364,12 @@ C L "rtc_get_time" 0 15 1 "FUNCTION"
 C L "rtc_get_time" 0 15 1 "FUNCTION"
 C L "rtc_get_time" 0 15 1 "FUNCTION"
 C L "rtc_get_time" 0 15 1 "FUNCTION"
-V L "year" 0 97 "int8" `939 
-V L "month" 0 97 "int8" `940 
-V L "date" 0 97 "int8" `941 
-V L "day" 0 97 "int8" `942 
-V L "banderaDate" 0 97 "int8" `967 
-F G "rtc_get_date" 0 98 "void(int8 year,int8 month,int8 date,int8 day,int8 banderaDate)" `938 
+V L "year" 0 101 "int8" `938 
+V L "month" 0 101 "int8" `939 
+V L "date" 0 101 "int8" `940 
+V L "day" 0 101 "int8" `941 
+V L "banderaDate" 0 101 "int8" `971 
+F G "rtc_get_date" 0 102 "void(int8 year,int8 month,int8 date,int8 day,int8 banderaDate)" `937 
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1
